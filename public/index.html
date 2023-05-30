@@ -10,7 +10,78 @@
 </head>
 
 <body>
-    <p>hello world</p>
+    <header>
+        <h1>Gym Tracker</h1>
+    </header>
+
+    <!-- <p>Hello world!</p> -->
+
+    <form id="taskform">
+        <div class="form-row">
+            <label for="taskName">Exercise:</label>
+            <input type="text" name="taskName" id="taskName" required="true" />
+        </div>
+
+        <div class="form-row">
+            <label for="taskType">Muscle Group:</label>
+            <select name="taskType" id="taskType" required="true">
+                <option value="">Select muscle group</option>
+                <option value="Chest">Chest</option>
+                <option value="Back">Back</option>
+                <option value="Arms">Arms</option>
+                <option value="Shoulders">Shoulders</option>
+                <option value="Abdominals">Abdominals</option>
+                <option value="Legs">Legs</option>
+                
+            </select>
+        </div>
+            
+        <div class="form-row">
+            <label for="taskSets">Sets:</label>
+            <input type="number" name="taskSets" id="taskSets" required="true" />
+        </div>
+            
+        <div class="form-row">
+            <label for="taskWeight">Weight:</label>
+            <input type="number" name="taskWeight" id="taskWeight" required="true" />
+        </div>
+
+        <div class="form-row">
+            <label for="taskReps">Repetitions:</label>
+            <input type="number" name="taskReps" id="taskReps" required="true" />
+        </div>
+
+        <div class="form-row">
+            <label for="taskGoal">Goal:</label>
+            <input type="text" name="taskGoal" id="taskGoal" required="false" />
+        </div>
+
+        <div class="form-row">
+            <label for="taskDifficulty">Difficulty:</label>
+            <select name="taskDifficulty" id="taskDifficulty" required="false">
+                <option value="">Select difficulty</option>
+                <option value="Easy">Too Easy</option>
+                <option value="Easy">Easy</option>
+                <option value="Average">Average</option>
+                <option value="Hard">Hard</option>
+                <option value="Hard">Too Hard</option>
+            </select>
+        </div>
+            
+        <div class="form-row">
+            <label for="taskNote">Note:</label>
+            <input type="text" name="taskNote" id="taskNote" required="false" />
+        </div>
+
+        <div class="form-row">
+            <input type="submit"/>
+          </div>
+    </form>
+
+    <h2>Tasks</h2>
+    <ul id="tasklist"></ul>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
