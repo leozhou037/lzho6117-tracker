@@ -1,5 +1,5 @@
-// Display time and date
-///
+///// Display time and date
+/////
 const date = new Date();
 
 // Get time and date values
@@ -12,11 +12,13 @@ let year = date.getFullYear();
 // Date Format
 let currentDate = `${day}/${month}/${year} - ${hour}:${minute}`;
 
-// Array to store user input data
-///
-var taskList = [];
+///// Array to store user input data
+/////
+// var taskList = [];
 
+// Function to add task to the list
 function addTask(name, type, reps, sets, weight, goal, difficulty, note) {
+    // Object to pass input parameters
     let task = {
         name,
         type,
@@ -30,17 +32,37 @@ function addTask(name, type, reps, sets, weight, goal, difficulty, note) {
         id: Date.now(),
         date: currentDate,
     }
-    taskList.push(task);
-    displayTask(task);
+
+    // Fetching and parse localStorage value
+    let localTasks = JSON.parse(localStorage.getItem('tasks'));
+
+    if (localTasks == null) {
+        localTasks = [task];
+    } else {
+        // Check if there is an existing task
+        if (localTasks.find(element => element.id === task.id)) {
+            console.log('Task ID already exists')
+        } else {
+            localTasks.push(task);
+        }
+    }
+
+    localStorage.setItem('tasks', JSON.stringify(localTasks));
+
+    // taskList.push(task);
+    displayTasks();
 }
 
-// Add input values to array
-///
+///// Add input values into array
+/////
+// Variable for DOM selection of HTML elements
 const form = document.querySelector('#taskform');
 
+// Event listener for submit button
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
+    // Retrieving input values and adding into addTask function
     addTask(
         form.elements.taskName.value,
         form.elements.taskType.value,
@@ -51,54 +73,71 @@ form.addEventListener('submit', function(event) {
         form.elements.taskDifficulty.value,
         form.elements.taskNote.value,
     )
-    
-    console.log(taskList)
     }
 )
 
-// Display data from array in task list
-///
+///// Display data from array in task list
+/////
+// Variable for DOM selection of HTML elements
 const tasklistElem = document.querySelector('#tasklist');
 
-function displayTask(task) {
-    let item = document.createElement('li');
-    item.setAttribute('data-id', task.id);
-    item.innerHTML = `<p>
-    <strong>${task.date}</strong>
-    <br>${task.name}
-    <br>${task.type}
-    <br>${task.reps}
-    <br>${task.sets}
-    <br>${task.weight}
-    <br>${task.goal}
-    <br>${task.difficulty}
-    <br>${task.note}
-    </p>`;
-    tasklistElem.appendChild(item);
+function displayTasks() {
+    tasklist.innerHTML = "";
 
-    // Clear form inputs
-    form.reset(); 
+    let localTasks = JSON.parse(localStorage.getItem('tasks'));
 
-    // Create delete button for each list item that is created
-    let delButton = document.createElement('button');
-    let delButtonText = document.createTextNode('Remove');
-    delButton.appendChild(delButtonText);
-    item.appendChild(delButton);
+    if (localTasks !== null) {
+        localTasks.forEach((task) => {
 
-    delButton.addEventListener('click', function(event) {
-        item.remove();
+            console.log(task);
 
-        taskList.forEach(function(taskArrayElement, taskArrayIndex) {
-            if (taskArrayElement.id == item.getAttribute('data-id')) {
-                taskList.splice(taskArrayIndex, 1)
+            // Create task items for the DOM and add to the list
+            let item = document.createElement('li');
+            item.setAttribute('data-id', task.id);
+            item.innerHTML = `<p>
+            <strong>${task.date}</strong>
+            <br>${task.name}
+            <br>${task.type}
+            <br>${task.reps}
+            <br>${task.sets}
+            <br>${task.weight}
+            <br>${task.goal}
+            <br>${task.difficulty}
+            <br>${task.note}
+            </p>`;
+            tasklistElem.appendChild(item);
+
+            // Clear form inputs after task gets displayed
+            form.reset(); 
+
+            // Create delete button for each list item that is created
+            let delButton = document.createElement('button');
+            let delButtonText = document.createTextNode('Remove');
+            delButton.appendChild(delButtonText);
+            item.appendChild(delButton);
+
+            // Event listener for when the delete button is clicked
+            delButton.addEventListener('click', function(event) {
+                localTasks.forEach(function(taskArrayElement, taskArrayIndex) {
+                    if (taskArrayElement.id == item.getAttribute('data-id')) {
+                        localTasks.splice(taskArrayIndex, 1)
+                    }
+                    }
+                )
+
+                localStorage.setItem('tasks', JSON.stringify(localTasks));
+
+                // Remove the item when the delete button gets clicked
+                item.remove();
                 }
+            )
             }
         )
-        console.log(taskList);
-        }
-    )
+    }
 }
 
-// Log the task array to console
-addTask("Exercise", "Muscle Group", 777, 777, 777); // test array;
-console.log(taskList);
+// Test values
+// addTask("Exercise", "Too Easy", 777, 777, 777); 
+
+// Call displayTask function see previous entries when page loads
+displayTasks()
