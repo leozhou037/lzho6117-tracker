@@ -17,7 +17,7 @@ let currentDate = `${day}/${month}/${year} - ${hour}:${minute}`;
 // var taskList = [];
 
 // Function to add task to the list
-function addTask(name, type, reps, sets, weight, goal, difficulty, note) {
+function addTask(name, type, reps, sets, weight, weightMeasurement, goal, difficulty, note) {
     // Object to pass input parameters
     let task = {
         name,
@@ -25,6 +25,7 @@ function addTask(name, type, reps, sets, weight, goal, difficulty, note) {
         reps,
         sets,
         weight,
+        weightMeasurement,
         goal,
         difficulty,
         note,
@@ -69,6 +70,7 @@ form.addEventListener('submit', function(event) {
         form.elements.taskReps.value,
         form.elements.taskSets.value,
         form.elements.taskWeight.value,
+        form.elements.taskWeightMeasurement.value,
         form.elements.taskGoal.value,
         form.elements.taskDifficulty.value,
         form.elements.taskNote.value,
@@ -100,7 +102,7 @@ function displayTasks() {
             <br>${task.type}
             <br>${task.reps}
             <br>${task.sets}
-            <br>${task.weight}
+            <br>${task.weight}${task.weightMeasurement}
             <br>${task.goal}
             <br>${task.difficulty}
             <br>${task.note}
