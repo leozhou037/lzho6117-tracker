@@ -123,7 +123,7 @@ function displayTasks() {
                 localTasks.forEach(function(taskArrayElement, taskArrayIndex) {
                     if (taskArrayElement.id == item.getAttribute('data-id')) {
                         localTasks.splice(taskArrayIndex, 1)
-                    }
+                        }
                     }
                 )
 
@@ -143,3 +143,24 @@ function displayTasks() {
 
 // Call displayTask function see previous entries when page loads
 displayTasks()
+
+///// Modal
+///// 
+// Variable for DOM selection of HTML elements
+const modal = document.querySelector("#data-modal");
+const openModal = document.querySelector("#data-open-modal");
+const closeModal = document.querySelector("#data-close-modal");
+
+// Event listener to show modal when button is clicked
+openModal.addEventListener("click", () => {
+    modal.showModal();
+}
+)
+
+// Event listener to close modal when close button is clicked
+closeModal.addEventListener("click", () => {
+    modal.close();
+}
+)
+
+// https://youtu.be/ywtkJkxJsdg

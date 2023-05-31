@@ -1,0 +1,10 @@
+dialog {
+    z-index: 10;
+    background: rgb(230, 183, 30);
+    border: none;
+    border-radius: 1rem;
+  }
+
+dialog::backdrop {
+    background-color: rgba($color: #000000, $alpha: 0.6)
+}

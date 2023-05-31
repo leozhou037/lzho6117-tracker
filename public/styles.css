@@ -1,0 +1,18 @@
+dialog {
+  z-index: 10;
+  background: rgb(230, 183, 30);
+  border: none;
+  border-radius: 1rem;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+  color: rgb(0, 60, 128);
+}
+
+p {
+  color: rgb(112, 0, 0);
+}
