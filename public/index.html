@@ -10,105 +10,95 @@
 </head>
 
 <body>
-    <!-- Title -->
+    <!-- Title --> 
     <header>
         <h1>Gym Tracker</h1>
     </header>
 
-    <p>test</p>
-
-    <!-- modal -->
+    <!-- Modal -->
     <button id="data-open-modal">Add</button>
 
     <dialog id="data-modal">
-        <p>test</p>
-        <button id="data-close-modal">Close</button>
+        <!-- Input Form inside modal -->
+        <form id="taskform">
+
+            <!-- Exercise text input -->
+            <div class="form-row">
+                <input type="text" name="taskName" id="taskName" required placeholder="Exercise name"/>
+            </div>
+
+            <!-- Muscle group dropdown menu -->
+            <div class="form-row">
+                <select name="taskType" id="taskType" required placeholder="Muscle Group">
+                    <option value="">Select muscle group</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Arms">Arms</option>
+                    <option value="Shoulders">Shoulders</option>
+                    <option value="Abdominals">Abdominals</option>
+                    <option value="Legs">Legs</option>
+                </select>
+            </div>
+
+            <!-- Repetitions number input -->
+            <div class="form-row">
+                <input type="number" name="taskReps" id="taskReps" required placeholder="Repetitions"/>
+            </div>
+
+            <!-- Sets number input -->
+            <div class="form-row">
+                <input type="number" name="taskSets" id="taskSets" required placeholder="Sets"/>
+            </div>
+
+            <!-- Weight number input -->
+            <div class="form-row">
+                <input type="number" name="taskWeight" id="taskWeight" required placeholder="Weight"/>
+
+                <!-- Dropdown to select between metric and imperial weight measurements-->
+                <select name="taskWeightMeasurement" id="taskWeightMeasurement" required>
+                    <option value="kg">kg</option>
+                    <option value="lb">lb</option>
+                </select>
+            </div>
+
+            <!-- Goal text input -->
+            <div class="form-row">
+                <input type="text" name="taskGoal" id="taskGoal" placeholder="Goal"/>
+            </div>
+
+            <!-- Difficulty dropdown menu -->
+            <div class="form-row">
+                <select name="taskDifficulty" id="taskDifficulty" placeholder="Difficulty">
+                    <option value="">Select difficulty</option>
+                    <option value="Easy">Too Easy</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Average">Average</option>
+                    <option value="Hard">Hard</option>
+                    <option value="Hard">Too Hard</option>
+                </select>
+            </div>
+                
+            <!-- Note text input -->
+            <div class="form-row">
+                <input type="text" name="taskNote" id="taskNote" placeholder="Note"/>
+            </div>
+
+            <!-- Submit button -->
+            <div class="form-row">
+                <button id="data-close-modal">Close</button>
+                <input type="submit"/>
+            </div>
+        </form>
     </dialog>
-    
-    <!-- Input Form -->
-    <form id="taskform">
-
-        <!-- Exercise text input -->
-        <div class="form-row">
-            <label for="taskName">Exercise:</label>
-            <input type="text" name="taskName" id="taskName" required="true" />
-        </div>
-
-        <!-- Muscle group dropdown menu -->
-        <div class="form-row">
-            <label for="taskType">Muscle Group:</label>
-            <select name="taskType" id="taskType" required="true">
-                <option value="">Select muscle group</option>
-                <option value="Chest">Chest</option>
-                <option value="Back">Back</option>
-                <option value="Arms">Arms</option>
-                <option value="Shoulders">Shoulders</option>
-                <option value="Abdominals">Abdominals</option>
-                <option value="Legs">Legs</option>
-            </select>
-        </div>
-
-        <!-- Repetitions number input -->
-        <div class="form-row">
-            <label for="taskReps">Repetitions:</label>
-            <input type="number" name="taskReps" id="taskReps" required="true" />
-        </div>
-
-        <!-- Sets number input -->
-        <div class="form-row">
-            <label for="taskSets">Sets:</label>
-            <input type="number" name="taskSets" id="taskSets" required="true" />
-        </div>
-
-        <!-- Weight number input -->
-        <div class="form-row">
-            <label for="taskWeight">Weight:</label>
-            <input type="number" name="taskWeight" id="taskWeight" required="true" />
-
-            <!-- Dropdown to select between metric and imperial weight measurements-->
-            <select name="taskWeightMeasurement" id="taskWeightMeasurement" required="true">
-                <option value="kg">kg</option>
-                <option value="lb">lb</option>
-            </select>
-        </div>
-
-        <!-- Goal text input -->
-        <div class="form-row">
-            <label for="taskGoal">Goal:</label>
-            <input type="text" name="taskGoal" id="taskGoal" required="false" />
-        </div>
-
-        <!-- Difficulty dropdown menu -->
-        <div class="form-row">
-            <label for="taskDifficulty">Difficulty:</label>
-            <select name="taskDifficulty" id="taskDifficulty" required="false">
-                <option value="">Select difficulty</option>
-                <option value="Easy">Too Easy</option>
-                <option value="Easy">Easy</option>
-                <option value="Average">Average</option>
-                <option value="Hard">Hard</option>
-                <option value="Hard">Too Hard</option>
-            </select>
-        </div>
-            
-        <!-- Note text input -->
-        <div class="form-row">
-            <label for="taskNote">Note:</label>
-            <input type="text" name="taskNote" id="taskNote" required="false" />
-        </div>
-
-        <!-- Submit button -->
-        <div class="form-row">
-            <input type="submit"/>
-          </div>
-    </form>
 
     <!-- Display task entries in a list -->
     <h2>Tasks</h2>
+
     <ul id="tasklist"></ul>
 
     <!-- Call script.js -->
     <script src="script.js"></script>
+
 </body>
 
 </html>

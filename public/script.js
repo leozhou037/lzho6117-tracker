@@ -75,6 +75,10 @@ form.addEventListener('submit', function(event) {
         form.elements.taskDifficulty.value,
         form.elements.taskNote.value,
     )
+    
+    // Close the modal when submit button is pressed
+    modal.close();
+
     }
 )
 
@@ -160,7 +164,8 @@ openModal.addEventListener("click", () => {
 // Event listener to close modal when close button is clicked
 closeModal.addEventListener("click", () => {
     modal.close();
+
+    // Clear form inputs when submit button is pressed
+    form.reset(); 
 }
 )
-
-// https://youtu.be/ywtkJkxJsdg
