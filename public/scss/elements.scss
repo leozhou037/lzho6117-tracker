@@ -1,11 +1,41 @@
 dialog {
-    z-index: 10;
-    background: rgb(230, 183, 30);
-    border: none;
-    border-radius: 1rem;
-  }
+  z-index: 10;
+  background: rgb(230, 183, 30);
+  border: none;
+  border-radius: 1rem;
+  margin: auto;
+  max-width: 80%;
+  padding: 5rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 
 dialog::backdrop {
     background-color: rgba($color: #000000, $alpha: 0.4);
     backdrop-filter: blur(5px);
+}
+
+label {
+  display: flex;
+  flex-direction: column-reverse;
+
+  span {
+    transition: all .2s;
+    transform-origin: top left;
+  }
+
+  input[placeholder=" "]:not(:focus):placeholder-shown + span {
+    transform: translateY(1em) scale(1.2);
+    pointer-events: none;
+    opacity: .5
+  }
+}
+
+.form-row-weight {
+  display: flex;
+  align-items: bottom;
+}
+
+.form-row-weight label {
+  margin-right: 1rem; /* Add some spacing between the input and select */
 }

@@ -1,0 +1,12 @@
+.form-row-weight {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-row-weight label {
+    margin-right: 1rem; /* Add some spacing between the input and select */
+  }
+
+  #taskWeightMeasurement {
+    align-self: flex-end;
+  }

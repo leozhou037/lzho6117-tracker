@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "sass": "sass --no-source-map public/scss/main.scss public/styles.css",
+    "scss": "sass --watch --no-source-map public/scss/main.scss public/styles.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -25,16 +25,20 @@
 
         <!-- Input Form inside modal -->
         <form id="taskform">
-
+ 
             <!-- Exercise text input -->
+            
             <div class="form-row">
-                <input type="text" name="taskName" id="taskName" required placeholder="Exercise name"/>
+                <label>
+                    <input type="text" name="taskName" id="taskName" required placeholder=" "/>
+                    <span>Exercise Name</span>
+                </label>
             </div>
 
             <!-- Muscle group dropdown menu -->
             <div class="form-row">
                 <select name="taskType" id="taskType" required placeholder="Muscle Group">
-                    <option value="">Select muscle group</option>
+                    <option value="" disabled selected>Select muscle group</option>
                     <option value="Chest">Chest</option>
                     <option value="Back">Back</option>
                     <option value="Arms">Arms</option>
@@ -46,17 +50,26 @@
 
             <!-- Repetitions number input -->
             <div class="form-row">
-                <input type="number" name="taskReps" id="taskReps" required placeholder="Repetitions"/>
+                <label>
+                    <input type="number" name="taskReps" id="taskReps" required placeholder=" "/>
+                    <span>Repetitions</span>
+                </label>
             </div>
 
             <!-- Sets number input -->
             <div class="form-row">
-                <input type="number" name="taskSets" id="taskSets" required placeholder="Sets"/>
+                <label>
+                    <input type="number" name="taskSets" id="taskSets" required placeholder=" "/>
+                    <span>Sets</span>
+                </label>
             </div>
 
             <!-- Weight number input -->
-            <div class="form-row">
-                <input type="number" name="taskWeight" id="taskWeight" required placeholder="Weight"/>
+            <div class="form-row-weight">
+                <label>
+                    <input type="number" name="taskWeight" id="taskWeight" required placeholder=" "/>
+                    <span>Weight</span>
+                </label>
 
                 <!-- Dropdown to select between metric and imperial weight measurements-->
                 <select name="taskWeightMeasurement" id="taskWeightMeasurement" required>
@@ -67,13 +80,16 @@
 
             <!-- Goal text input -->
             <div class="form-row">
-                <input type="text" name="taskGoal" id="taskGoal" placeholder="Goal"/>
+                <label>
+                    <input type="text" name="taskGoal" id="taskGoal" placeholder=" "/>
+                    <span>Goal</span>
+                </label>
             </div>
 
             <!-- Difficulty dropdown menu -->
             <div class="form-row">
                 <select name="taskDifficulty" id="taskDifficulty" placeholder="Difficulty">
-                    <option value="">Select difficulty</option>
+                    <option value="" disabled selected>Select difficulty</option>
                     <option value="Easy">Too Easy</option>
                     <option value="Easy">Easy</option>
                     <option value="Average">Average</option>
@@ -84,7 +100,10 @@
                 
             <!-- Note text input -->
             <div class="form-row">
-                <input type="text" name="taskNote" id="taskNote" placeholder="Note"/>
+                <label>
+                    <input type="text" name="taskNote" id="taskNote" placeholder=" "/>
+                    <span>Note</span>
+                </label>
             </div>
 
             <!-- Submit button -->
