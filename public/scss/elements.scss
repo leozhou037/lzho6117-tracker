@@ -1,3 +1,4 @@
+/* Dialog/Modal element*/
 dialog {
   z-index: 10;
   background: rgb(230, 183, 30);
@@ -5,7 +6,7 @@ dialog {
   border-radius: 1rem;
   margin: auto;
   max-width: 80%;
-  padding: 5rem;
+  padding: 2rem;
   box-sizing: border-box;
   overflow-x: hidden;
 }
@@ -15,6 +16,7 @@ dialog::backdrop {
     backdrop-filter: blur(5px);
 }
 
+/* Floating label above input field */
 label {
   display: flex;
   flex-direction: column-reverse;
@@ -29,13 +31,4 @@ label {
     pointer-events: none;
     opacity: .5
   }
-}
-
-.form-row-weight {
-  display: flex;
-  align-items: bottom;
-}
-
-.form-row-weight label {
-  margin-right: 1rem; /* Add some spacing between the input and select */
 }
