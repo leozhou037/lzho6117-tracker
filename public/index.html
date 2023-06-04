@@ -5,20 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Tracker</title>
+    <title>Gym Exercise Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <!-- Title --> 
     <header>
-        <h1>Gym Tracker</h1>
+        <h1>Gym Exercise Tracker</h1>
     </header>
 
     <!-- Modal -->
-    <button id="open-input-modal">Add</button>
+    <button id="open-input-modal">Add Exercise</button>
 
     <dialog id="input-modal">
+
+        <!-- Modal title text -->
+        <h1> Add Your Exercise</h1>
+
         <!-- Input Form inside modal -->
         <form id="taskform">
 
@@ -92,8 +96,6 @@
     </dialog>
 
     <!-- Display task entries in a list -->
-    <h2>Tasks</h2>
-
     <ul id="tasklist"></ul>
 
     <!-- Call script.js -->

@@ -83,6 +83,19 @@ form.addEventListener('submit', function(event) {
     }
 )
 
+///////////////////////////////////////////////////////////////
+// Object to map each muscle group to a corresponding image URL
+///////////////////////////////////////////////////////////////
+
+const muscleGroupLogo = {
+    "Chest": "images/chest.png",
+    "Back": "images/back.png",
+    "Arms": "images/arm.png",
+    "Shoulders": "images/shoulders.png",
+    "Abdominals": "images/abs.png",
+    "Legs": "images/legs.png",
+};
+
 ///////////////////////////////////////
 // Display data from array in task list
 ///////////////////////////////////////
@@ -104,6 +117,9 @@ function displayTasks() {
             let item = document.createElement('li');
             item.setAttribute('data-id', task.id);
             item.innerHTML = `
+
+                <img src="${muscleGroupLogo[task.type]}" alt="${task.type}">
+
                 <h2>
                     <strong>${task.name}</strong>
                 </h2>
@@ -126,6 +142,9 @@ function displayTasks() {
             /////////////////////////////////////////////////////////////////////////////
             let moreModal = document.createElement('dialog');
             moreModal.innerHTML = `
+
+            <img src="${muscleGroupLogo[task.type]}" alt="${task.type}">
+
             <h1>
             <strong>${task.name}</strong>
             </h1>
@@ -152,10 +171,52 @@ function displayTasks() {
             `;
             item.appendChild(moreModal);
 
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            // Create 'view more' button for each list item that is created, to open the 'view more' modal
+            //////////////////////////////////////////////////////////////////////////////////////////////         
+            let moreButton = document.createElement('button');
+            let moreButtonText = document.createTextNode('View More');
+            moreButton.appendChild(moreButtonText);
+            item.appendChild(moreButton);
+
+            // Event listener to show the 'view more' modal when the 'view more' button is clicked
+            moreButton.addEventListener('click', () => {
+                moreModal.showModal();
+                }
+            );
+
+            //////////////////////////////////////////////////////////
+            // Create delete button for each list item that is created
+            //////////////////////////////////////////////////////////
+            let delButton = document.createElement('button');
+            let delButtonText = document.createTextNode('Remove');
+            delButton.appendChild(delButtonText);
+            moreModal.appendChild(delButton);
+
+            // Event listener for when the delete button is clicked
+            delButton.addEventListener('click', function(event) {
+                localTasks.forEach(function(taskArrayElement, taskArrayIndex) {
+                    if (taskArrayElement.id == item.getAttribute('data-id')) {
+                        localTasks.splice(taskArrayIndex, 1)
+                        }
+                    }
+                )
+
+                localStorage.setItem('tasks', JSON.stringify(localTasks));
+
+                // Remove the item when the delete button gets clicked
+                item.remove();
+                }
+            )
+
+            ///////////////////////////////////////////////////
             // Create a close button inside the view more modal
+            ///////////////////////////////////////////////////
+            let lineBreak = document.createElement('br');
             let closeMoreModal = document.createElement('button');
             let closeMoreModalText = document.createTextNode('Close');
             closeMoreModal.appendChild(closeMoreModalText);
+            moreModal.appendChild(lineBreak);
             moreModal.appendChild(closeMoreModal);
 
             // Event listener to close the view more modal when clicked
@@ -178,42 +239,6 @@ function displayTasks() {
                     }
                 }
             );
-
-            // Create 'view more' button for each list item that is created, to open the 'view more' modal
-            let moreButton = document.createElement('button');
-            let moreButtonText = document.createTextNode('View More');
-            moreButton.appendChild(moreButtonText);
-            item.appendChild(moreButton);
-
-            // Event listener to show the 'view more' modal when the 'view more' button is clicked
-            moreButton.addEventListener('click', () => {
-                moreModal.showModal();
-                }
-            );
-
-            //////////////////////////////////////////////////////////
-            // Create delete button for each list item that is created
-            //////////////////////////////////////////////////////////
-            let delButton = document.createElement('button');
-            let delButtonText = document.createTextNode('Remove');
-            delButton.appendChild(delButtonText);
-            item.appendChild(delButton);
-
-            // Event listener for when the delete button is clicked
-            delButton.addEventListener('click', function(event) {
-                localTasks.forEach(function(taskArrayElement, taskArrayIndex) {
-                    if (taskArrayElement.id == item.getAttribute('data-id')) {
-                        localTasks.splice(taskArrayIndex, 1)
-                        }
-                    }
-                )
-
-                localStorage.setItem('tasks', JSON.stringify(localTasks));
-
-                // Remove the item when the delete button gets clicked
-                item.remove();
-                }
-            )
             
             // Clear form inputs after task gets displayed
             form.reset(); 
