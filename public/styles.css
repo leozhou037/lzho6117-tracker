@@ -44,6 +44,7 @@ dialog::backdrop {
 }
 
 /* Floating label above input field */
+/* Reference: https://dev.to/yne/floating-label-over-input-cci */
 label {
   display: flex;
   flex-direction: column-reverse;
