@@ -4,6 +4,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 100vh 100vh;
   height: 100vh;
+  padding: 0;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas: "landing-page" "content-page";
@@ -11,10 +12,48 @@
 
 .landing-page {
   grid-area: landing-page;
+  /* the landing page background is the background of the first grid box, 
+  which covers the entire viewport rather than the page,
+  to allow for scrolling without a fixed background */
+  background: url(images/gym.png) no-repeat center;
+  background-size: fill;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.landing-page h1 {
+  font-family: "Geologica", sans-serif;
+  font-size: 100px;
+  font-weight: bolder;
+  text-align: center;
+  color: var(--almostwhite);
+}
+.landing-page #cta {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--orangemain);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Geologica", sans-serif;
+  font-size: 24px;
+}
+.landing-page #cta:hover {
+  background-color: #ff8d22;
 }
 
-.content-page {
+#content-page {
   grid-area: content-page;
+  padding-top: 40px;
+}
+#content-page h1 {
+  margin-left: 40px;
+  color: var(--almostwhite);
+  font-family: "Geologica", sans-serif;
 }
 
 /* Allign weight measurement select element with weight input element */
@@ -30,6 +69,7 @@
   align-self: flex-end;
 }
 
+/* Padding Inside Form */
 .form-row-reps, .form-row-goal {
   padding-top: 2rem;
 }
@@ -71,9 +111,9 @@ dialog {
 }
 dialog #add-label {
   color: var(--almostwhite);
-  font-size: 48px;
+  font-size: 36px;
   margin: 0;
-  font-family: "Kanit", sans-serif;
+  font-family: "Geologica", sans-serif;
 }
 
 dialog::backdrop {
@@ -99,6 +139,7 @@ form select {
   color: #cacaca;
   font-family: "Geologica", sans-serif;
   font-size: 18px;
+  width: 100%;
 }
 form select:focus {
   color: #000000;
@@ -116,7 +157,7 @@ form #submit-button {
   width: 100%;
   padding: 10px;
   margin-top: 20px;
-  background-color: #4CAF50;
+  background-color: var(--orangemain);
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -202,11 +243,6 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
   margin-top: 0;
   margin-bottom: 15px;
   font-weight: normal;
-}
-#tasklist li p {
-  font-size: 14px;
-  margin-top: 25px;
-  margin-bottom: 0;
 }
 #tasklist li button { /* view more button */
   width: 100%;
@@ -304,22 +340,29 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
   --lessdark: rgb(54, 54, 54);
   --lessgrey: rgb(211, 211, 211);
   --almostwhite: rgb(235, 235, 235);
-  --purplebg: #322260;
+  --purplebg: #3a1857;
   --orangemain:#cf7e14;
 }
 
-#tasklist li h1, #tasklist li h2, #tasklist li p {
-  text-align: left;
-  margin-left: 5%;
-  color: var(--lessgrey);
-  font-family: "Kanit", sans-serif;
-}
-
-#tasklist li dialog h1, #tasklist li dialog h2, #tasklist li dialog h3, #tasklist li dialog p {
+#tasklist li dialog h3, #tasklist li dialog p {
   text-align: left;
   margin-left: 5%;
   color: var(--almostwhite);
   font-family: "Kanit", sans-serif;
+}
+
+#tasklist li h1, #tasklist li h2 {
+  text-align: left;
+  margin-left: 5%;
+  color: var(--almostwhite);
+  font-family: "Geologica", sans-serif;
+}
+
+#tasklist li dialog h1, #tasklist li dialog h2 {
+  text-align: left;
+  margin-left: 5%;
+  color: var(--almostwhite);
+  font-family: "Geologica", sans-serif;
 }
 
 strong {
@@ -328,4 +371,7 @@ strong {
 
 html, body {
   background-color: var(--purplebg);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }

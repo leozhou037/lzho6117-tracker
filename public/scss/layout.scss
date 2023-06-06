@@ -1,8 +1,10 @@
 /* CSS Grid */
-.container {  display: grid;
+.container {  
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100vh 100vh;
   height: 100vh;
+  padding: 0;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -10,9 +12,56 @@
     "content-page";
 }
 
-.landing-page { grid-area: landing-page; }
+.landing-page { 
+  grid-area: landing-page; 
+  /* the landing page background is the background of the first grid box, 
+  which covers the entire viewport rather than the page,
+  to allow for scrolling without a fixed background */
+  background: url(images/gym.png) no-repeat center;
+  background-size: fill;
+  height: 100vh;
 
-.content-page { grid-area: content-page; }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
+  h1 {
+    font-family: 'Geologica', sans-serif;
+    font-size: 100px;
+    font-weight: bolder;
+    text-align: center;
+    color: var(--almostwhite);
+  }
+
+  #cta {
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: var(--orangemain);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Geologica', sans-serif;
+    font-size: 24px;
+  }
+
+  #cta:hover {
+    background-color: #ff8d22;
+  }
+}
+
+#content-page { 
+  grid-area: content-page; 
+  padding-top: 40px;
+
+  h1 {
+    margin-left: 40px;
+    color: var(--almostwhite);
+    font-family: 'Geologica', sans-serif;
+  }
+}
 
 /* Allign weight measurement select element with weight input element */
 .form-row-weight {
@@ -28,6 +77,7 @@
   align-self: flex-end;
 }
 
+/* Padding Inside Form */
 .form-row-reps, .form-row-goal {
   padding-top: 2rem;
 }

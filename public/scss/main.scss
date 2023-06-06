@@ -7,22 +7,36 @@
   --lessdark: rgb(54, 54, 54);
   --lessgrey: rgb(211, 211, 211);
   --almostwhite: rgb(235, 235, 235);
-  --purplebg: #322260;
+  --purplebg: #3a1857;
   --orangemain:#cf7e14;
 }
 
-%lessgreyText {
+%lessgreyKanit {
   text-align: left;
   margin-left: 5%;
   color: var(--lessgrey);
   font-family: 'Kanit', sans-serif;
 }
 
-%almostwhiteText {
+%almostwhiteKanit {
   text-align: left;
   margin-left: 5%;
   color: var(--almostwhite);
   font-family: 'Kanit', sans-serif;
+}
+
+%lessgreyGeologica {
+  text-align: left;
+  margin-left: 5%;
+  color: var(--almostwhite);
+  font-family: 'Geologica', sans-serif;
+}
+
+%almostwhiteGeologica {
+  text-align: left;
+  margin-left: 5%;
+  color: var(--almostwhite);
+  font-family: 'Geologica', sans-serif;
 }
 
 strong {
@@ -31,5 +45,8 @@ strong {
 
 html, body {
     background-color: var(--purplebg);
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
   }
   

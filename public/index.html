@@ -22,11 +22,16 @@
     <div class="container">
         <!-- Landing Page --> 
         <div class="landing-page">
-            <h1>Gym Exercise Tracker</h1>
+            <div class="landing-elements">
+                <h1>Jym Journey</h1>
+
+                <!-- Reference: https://stackoverflow.com/questions/16349490/html-css-buttons-that-scroll-down-to-different-div-sections-on-a-webpage -->
+                <button id="cta" onClick="document.getElementById('content-page').scrollIntoView();">START TRACKING YOUR SUCCESS</button>
+             </div>
         </div>
 
         <!-- Content underneath landing page --> 
-        <div class="content-page">
+        <div id="content-page">
 
             <!-- Button to open input modal -->
             <button id="open-input-modal">ADD EXERCISE</button>
@@ -129,6 +134,7 @@
             </dialog>
 
             <!-- Display task entries in a list -->
+            <h1> Exercises Completed:</h1>
             <ul id="tasklist"></ul>
         </div>
       </div>

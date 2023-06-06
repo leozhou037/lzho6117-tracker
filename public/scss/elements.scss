@@ -35,9 +35,9 @@ dialog {
 
  #add-label {
     color: var(--almostwhite);
-    font-size: 48px;
+    font-size: 36px;
     margin: 0;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Geologica', sans-serif;
   }
 }
 
@@ -67,6 +67,7 @@ form {
     color: #cacaca;
     font-family: 'Geologica', sans-serif;
     font-size: 18px;
+    width: 100%;
   }
 
   select:focus {
@@ -89,7 +90,7 @@ form {
     width: 100%;
     padding: 10px;
     margin-top: 20px;
-    background-color: #4CAF50;
+    background-color: var(--orangemain);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -175,7 +176,7 @@ label {
   }
 
   h1 { /* excercise name */
-    @extend %lessgreyText;
+    @extend %lessgreyGeologica;
     font-size: 32px;
     margin-top: 0;
     margin-bottom: 0; 
@@ -183,18 +184,11 @@ label {
   }
 
   h2 {  /* muscle group and date */
-    @extend %lessgreyText;
+    @extend %lessgreyGeologica;
     font-size: 20px;
     margin-top: 0;
     margin-bottom: 15px; 
     font-weight: normal;
-  }
-
-  p {
-    @extend %lessgreyText;
-    font-size: 14px;
-    margin-top: 25px;
-    margin-bottom: 0; 
   }
 
   button { /* view more button */
@@ -233,7 +227,7 @@ label {
     }
 
     h1 { /* excercise name */
-      @extend %almostwhiteText;
+      @extend %almostwhiteGeologica;
       font-size: 64px;
       margin-top: 0;
       margin-bottom: 0; 
@@ -242,7 +236,7 @@ label {
     }
   
     h2 { /* muscle group and date */
-      @extend %almostwhiteText;
+      @extend %almostwhiteGeologica;
       font-size: 32px;
       margin-top: 0;
       margin-bottom: 0; 
@@ -251,7 +245,7 @@ label {
     }
   
     h3 { /* sets reps weight */
-      @extend %almostwhiteText;
+      @extend %almostwhiteKanit;
       font-size: 32px;
       margin-top: 40px;
       margin-bottom: 0; 
@@ -260,7 +254,7 @@ label {
     }
   
     p { /* additional info */
-      @extend %almostwhiteText;
+      @extend %almostwhiteKanit;
       font-size: 18px;
       margin-top: 40px;
       margin-bottom: 0; 
