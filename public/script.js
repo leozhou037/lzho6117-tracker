@@ -117,23 +117,21 @@ function displayTasks() {
             let item = document.createElement('li');
             item.setAttribute('data-id', task.id);
             item.innerHTML = `
-
-                <img src="${muscleGroupLogo[task.type]}" alt="${task.type}">
+                <figure>
+                    <img src="${muscleGroupLogo[task.type]}" alt="${task.type}">
+                </figure>
+                
+                <h1>
+                    <strong>${task.name}</strong>
+                </h1>
 
                 <h2>
-                    <strong>${task.name}</strong>
+                    ${task.type}
                 </h2>
 
-                <p>
-                    ${task.type}
-                    <br>
+                <h2>
                     <strong>${task.date}</strong> 
-                    <br>
-                    <br>
-                    <strong>${task.weight}</strong>${task.weightMeasurement} 
-                    <br>
-                    <strong>${task.reps} </strong> Reps x <strong>${task.sets}</strong> Sets
-                </p>
+                </h2>
             `;
             tasklistElem.appendChild(item);
 
@@ -142,8 +140,9 @@ function displayTasks() {
             /////////////////////////////////////////////////////////////////////////////
             let moreModal = document.createElement('dialog');
             moreModal.innerHTML = `
-
-            <img src="${muscleGroupLogo[task.type]}" alt="${task.type}">
+            <figure>
+                <img src="${muscleGroupLogo[task.type]}" alt="${task.type}">
+            </figure>
 
             <h1>
             <strong>${task.name}</strong>
@@ -151,7 +150,9 @@ function displayTasks() {
 
             <h2>
                 ${task.type} 
-                <br>
+            </h2>
+            
+            <h2>
                 <strong>${task.date}</strong>
             </h2>
 
@@ -175,7 +176,7 @@ function displayTasks() {
             // Create 'view more' button for each list item that is created, to open the 'view more' modal
             //////////////////////////////////////////////////////////////////////////////////////////////         
             let moreButton = document.createElement('button');
-            let moreButtonText = document.createTextNode('View More');
+            let moreButtonText = document.createTextNode('VIEW MORE');
             moreButton.appendChild(moreButtonText);
             item.appendChild(moreButton);
 
@@ -189,7 +190,7 @@ function displayTasks() {
             // Create delete button for each list item that is created
             //////////////////////////////////////////////////////////
             let delButton = document.createElement('button');
-            let delButtonText = document.createTextNode('Remove');
+            let delButtonText = document.createTextNode('DELETE EXERCISE');
             delButton.appendChild(delButtonText);
             moreModal.appendChild(delButton);
 
@@ -214,7 +215,7 @@ function displayTasks() {
             ///////////////////////////////////////////////////
             let lineBreak = document.createElement('br');
             let closeMoreModal = document.createElement('button');
-            let closeMoreModalText = document.createTextNode('Close');
+            let closeMoreModalText = document.createTextNode('CLOSE');
             closeMoreModal.appendChild(closeMoreModalText);
             moreModal.appendChild(lineBreak);
             moreModal.appendChild(closeMoreModal);

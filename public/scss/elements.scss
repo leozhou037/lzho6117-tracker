@@ -1,19 +1,91 @@
 /* Dialog/Modal element*/
 dialog {
   z-index: 10;
-  background: rgb(230, 183, 30);
+  background: var(--almostblack);
   border: none;
   border-radius: 1rem;
   margin: auto;
-  max-width: 80%;
+  min-width: 25%;
+  min-height: 50%;
   padding: 2rem;
   box-sizing: border-box;
   overflow-x: hidden;
+
+ #add-label {
+    color: var(--almostwhite);
+    font-size: 42px;
+    margin-left: 0;
+  }
 }
 
 dialog::backdrop {
     background-color: rgba($color: #000000, $alpha: 0.4);
     backdrop-filter: blur(5px);
+}
+
+form {
+  
+  input, textarea {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+    
+  select {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: grey;
+  }
+
+  select:focus {
+    color: #000000;
+  }
+
+  option {
+    color: black;
+  }
+
+  option:not(:first-of-type) {
+    color: black;
+  }
+
+  option:first-of-type {
+    color: grey;
+  }
+
+  #submit-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #submit-button:hover {
+    background-color: #2b642e;
+  }
+
+  #close-input-modal {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #646464;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  #close-input-modal:hover {
+    background-color: #3b3b3b;
+  }
+
 }
 
 /* Floating label above input field */
@@ -25,11 +97,112 @@ label {
   span {
     transition: all .2s;
     transform-origin: top left;
+    color: var(--almostwhite);
+    margin-left: 15px;
   }
 
   input[placeholder=" "]:not(:focus):placeholder-shown + span {
-    transform: translateY(1em) scale(1.2);
+    transform: translateY(1.5em) scale(1.2);
     pointer-events: none;
-    opacity: .5
+    color: grey;
+  }
+
+  textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
+    transform: translateY(1.5em) scale(1.2);
+    pointer-events: none;
+    color: grey;
+  }
+}
+
+/* List element */
+#tasklist li {
+  background: var(--almostblack);
+  margin-bottom: 2rem;
+  width: 20%;
+  max-width: 20%;
+  display: inline-block;
+  margin-right: 5%;
+  text-align: center;
+
+  figure {
+    background-color: var(--almostwhite);
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0; 
+
+    img {
+      vertical-align: top;
+      width: 75%;
+      object-fit: cover;
+    }
+  }
+
+  h1 { /* excercise name */
+    @extend %normalText;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 0; 
+  }
+
+  h2 {  /* muscle group and date */
+    @extend %normalText;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 15px; 
+    font-weight: normal;
+  }
+
+  p {
+    @extend %normalText;
+    font-size: 14px;
+    margin-top: 25px;
+    margin-bottom: 0; 
+  }
+
+  dialog {
+    padding: 0;
+    min-width: 50%;
+    min-height: 90%;
+
+    figure {
+      background-color: var(--almostwhite);
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0; 
+      
+      img {
+        vertical-align: top;
+        height: 30vh; 
+        width: 50%;
+        object-fit: contain;
+      }
+    }
+
+    h1 { /* excercise name */
+      font-size: 64px;
+      margin-top: 0;
+      margin-bottom: 0; 
+    }
+  
+    h2 { /* muscle group and date */
+      font-size: 42px;
+      margin-top: 0;
+      margin-bottom: 0; 
+      font-weight: normal;
+    }
+  
+    h3 { /* sets reps weight */
+      @extend %normalText;
+      font-size: 32px;
+      margin-top: 40px;
+      margin-bottom: 0; 
+      font-weight: normal;
+    }
+  
+    p { /* additional info */
+      font-size: 18px;
+      margin-top: 40px;
+      margin-bottom: 0; 
+    }
   }
 }

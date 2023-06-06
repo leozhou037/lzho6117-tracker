@@ -2,3 +2,18 @@
 @import 'typography';
 @import 'elements';
 
+:root {
+  --almostblack: rgb(32, 32, 32);
+  --almostwhite: rgb(206, 206, 206);
+}
+
+%normalText {
+  text-align: left;
+  margin-left: 5%;
+  color: var(--almostwhite);
+}
+
+html, body {
+    background-color: rgb(54, 0, 105);
+  }
+  

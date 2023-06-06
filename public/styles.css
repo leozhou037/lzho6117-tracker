@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
 }
-
 .form-row-weight label {
   margin-right: 1rem;
 }
@@ -12,35 +11,99 @@
   align-self: flex-end;
 }
 
-/* Text */
-h1 {
-  color: rgb(0, 60, 128);
+/* CSS Grid */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100vh 100vh;
+  height: 100vh;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "landing-page" "content-page";
 }
 
-h2 {
-  color: rgb(0, 18, 39);
+.landing-page {
+  grid-area: landing-page;
 }
 
-p {
-  color: rgb(112, 0, 0);
+.content-page {
+  grid-area: content-page;
 }
 
 /* Dialog/Modal element*/
 dialog {
   z-index: 10;
-  background: rgb(230, 183, 30);
+  background: var(--almostblack);
   border: none;
   border-radius: 1rem;
   margin: auto;
-  max-width: 80%;
+  min-width: 25%;
+  min-height: 50%;
   padding: 2rem;
   box-sizing: border-box;
   overflow-x: hidden;
+}
+dialog #add-label {
+  color: var(--almostwhite);
+  font-size: 42px;
+  margin-left: 0;
 }
 
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
+}
+
+form input, form textarea {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+form select {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: grey;
+}
+form select:focus {
+  color: #000000;
+}
+form option {
+  color: black;
+}
+form option:not(:first-of-type) {
+  color: black;
+}
+form option:first-of-type {
+  color: grey;
+}
+form #submit-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+form #submit-button:hover {
+  background-color: #2b642e;
+}
+form #close-input-modal {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #646464;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+form #close-input-modal:hover {
+  background-color: #3b3b3b;
 }
 
 /* Floating label above input field */
@@ -52,9 +115,108 @@ label {
 label span {
   transition: all 0.2s;
   transform-origin: top left;
+  color: var(--almostwhite);
+  margin-left: 15px;
 }
 label input[placeholder=" "]:not(:focus):placeholder-shown + span {
-  transform: translateY(1em) scale(1.2);
+  transform: translateY(1.5em) scale(1.2);
   pointer-events: none;
-  opacity: 0.5;
+  color: grey;
+}
+label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
+  transform: translateY(1.5em) scale(1.2);
+  pointer-events: none;
+  color: grey;
+}
+
+/* List element */
+#tasklist li {
+  background: var(--almostblack);
+  margin-bottom: 2rem;
+  width: 20%;
+  max-width: 20%;
+  display: inline-block;
+  margin-right: 5%;
+  text-align: center;
+}
+#tasklist li figure {
+  background-color: var(--almostwhite);
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+#tasklist li figure img {
+  vertical-align: top;
+  width: 75%;
+  object-fit: cover;
+}
+#tasklist li h1 { /* excercise name */
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#tasklist li h2 { /* muscle group and date */
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+#tasklist li p {
+  font-size: 14px;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+#tasklist li dialog {
+  padding: 0;
+  min-width: 50%;
+  min-height: 90%;
+}
+#tasklist li dialog figure {
+  background-color: var(--almostwhite);
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+#tasklist li dialog figure img {
+  vertical-align: top;
+  height: 30vh;
+  width: 50%;
+  object-fit: contain;
+}
+#tasklist li dialog h1 { /* excercise name */
+  font-size: 64px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#tasklist li dialog h2 { /* muscle group and date */
+  font-size: 42px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+#tasklist li dialog h3 { /* sets reps weight */
+  font-size: 32px;
+  margin-top: 40px;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+#tasklist li dialog p { /* additional info */
+  font-size: 18px;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+:root {
+  --almostblack: rgb(32, 32, 32);
+  --almostwhite: rgb(206, 206, 206);
+}
+
+#tasklist li h1, #tasklist li h2, #tasklist li p, #tasklist li dialog h3 {
+  text-align: left;
+  margin-left: 5%;
+  color: var(--almostwhite);
+}
+
+html, body {
+  background-color: rgb(54, 0, 105);
 }

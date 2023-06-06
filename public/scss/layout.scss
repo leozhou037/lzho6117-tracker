@@ -2,12 +2,29 @@
 .form-row-weight {
     display: flex;
     align-items: center;
-  }
-  
-  .form-row-weight label {
-    margin-right: 1rem;
+
+    label {
+      margin-right: 1rem;
+    }
   }
 
   #taskWeightMeasurement {
     align-self: flex-end;
   }
+
+  /* CSS Grid */
+  .container {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh 100vh;
+    height: 100vh;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "landing-page"
+      "content-page";
+  }
+  
+  .landing-page { grid-area: landing-page; }
+  
+  .content-page { grid-area: content-page; }
+  
