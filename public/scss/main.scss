@@ -4,16 +4,32 @@
 
 :root {
   --almostblack: rgb(32, 32, 32);
-  --almostwhite: rgb(206, 206, 206);
+  --lessdark: rgb(54, 54, 54);
+  --lessgrey: rgb(211, 211, 211);
+  --almostwhite: rgb(235, 235, 235);
+  --purplebg: #322260;
+  --orangemain:#cf7e14;
 }
 
-%normalText {
+%lessgreyText {
+  text-align: left;
+  margin-left: 5%;
+  color: var(--lessgrey);
+  font-family: 'Kanit', sans-serif;
+}
+
+%almostwhiteText {
   text-align: left;
   margin-left: 5%;
   color: var(--almostwhite);
+  font-family: 'Kanit', sans-serif;
+}
+
+strong {
+  font-weight: 900;
 }
 
 html, body {
-    background-color: rgb(54, 0, 105);
+    background-color: var(--purplebg);
   }
   

@@ -159,15 +159,21 @@ function displayTasks() {
             <h3>
                 <strong>${task.weight}</strong>${task.weightMeasurement} 
                 <br>
-                <strong>${task.reps} </strong> Reps x <strong>${task.sets}</strong> Sets
+                <strong>${task.reps} </strong> Reps × <strong>${task.sets}</strong> Sets
             </h3>
 
             <p>
-                <strong>Goal:</strong> ${task.goal} 
+                <strong>Goal:</strong> <br>
+                ${task.goal} 
                 <br>
-                <strong>Difficulty:</strong> ${task.difficulty} 
                 <br>
-                <strong>Note:</strong> ${task.note}
+                <strong>Difficulty:</strong> 
+                <br>
+                ${task.difficulty} 
+                <br>
+                <br>
+                <strong>Note:</strong> 
+                <br>${task.note}
             </p>
             `;
             item.appendChild(moreModal);
@@ -190,6 +196,7 @@ function displayTasks() {
             // Create delete button for each list item that is created
             //////////////////////////////////////////////////////////
             let delButton = document.createElement('button');
+            delButton.id = 'delete-button';
             let delButtonText = document.createTextNode('DELETE EXERCISE');
             delButton.appendChild(delButtonText);
             moreModal.appendChild(delButton);
@@ -213,11 +220,10 @@ function displayTasks() {
             ///////////////////////////////////////////////////
             // Create a close button inside the view more modal
             ///////////////////////////////////////////////////
-            let lineBreak = document.createElement('br');
             let closeMoreModal = document.createElement('button');
+            closeMoreModal.id = 'close-button';
             let closeMoreModalText = document.createTextNode('CLOSE');
             closeMoreModal.appendChild(closeMoreModalText);
-            moreModal.appendChild(lineBreak);
             moreModal.appendChild(closeMoreModal);
 
             // Event listener to close the view more modal when clicked
@@ -293,4 +299,14 @@ inputModal.addEventListener("click", e => {
     }
   })
 
+// Only show add exercise button once the user scrolls past the landing page
+// Reference: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+window.onscroll = function() { scrollFunction() };
 
+function scrollFunction() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    document.getElementById("open-input-modal").style.display = "block";
+    } else {
+    document.getElementById("open-input-modal").style.display = "none";
+    }
+}

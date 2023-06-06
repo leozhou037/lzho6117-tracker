@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gym Exercise Tracker</title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Geologica -->
+    <link href="https://fonts.googleapis.com/css2?family=Geologica&display=swap" rel="stylesheet">
+    <!-- Kanit -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -20,8 +28,10 @@
         <!-- Content underneath landing page --> 
         <div class="content-page">
 
+            <!-- Button to open input modal -->
             <button id="open-input-modal">ADD EXERCISE</button>
-             <!-- Input Form Modal -->
+             
+            <!-- Input Form Modal -->
             <dialog id="input-modal">
 
                 <!-- Modal title text -->
@@ -42,7 +52,7 @@
                     <!-- Muscle group dropdown menu -->
                     <div class="form-row">
                         <select name="taskType" id="taskType" required placeholder="Muscle Group">
-                            <option value="" disabled selected>Select muscle group</option>
+                            <option value="" disabled selected>Select Muscle Group</option>
                             <option value="Chest">Chest</option>
                             <option value="Back">Back</option>
                             <option value="Arms">Arms</option>
@@ -52,11 +62,8 @@
                         </select>
                     </div>
 
-                    <br>
-                    <br>
-
                     <!-- Repetitions number input -->
-                    <div class="form-row">
+                    <div class="form-row-reps">
                         <label>
                             <input type="number" name="taskReps" id="taskReps" required placeholder=" "/>
                             <span>Repetitions</span>
@@ -85,11 +92,8 @@
                         </select>
                     </div>
 
-                    <br>
-                    <br>
-
                     <!-- Goal text input -->
-                    <div class="form-row">
+                    <div class="form-row-goal">
                         <label>
                             <input type="text" name="taskGoal" id="taskGoal" placeholder=" "/>
                             <span>Goal</span>
@@ -99,7 +103,7 @@
                     <!-- Difficulty dropdown menu -->
                     <div class="form-row">
                         <select name="taskDifficulty" id="taskDifficulty" placeholder="Difficulty">
-                            <option value="" disabled selected>Select difficulty</option>
+                            <option value="" disabled selected>Select Difficulty</option>
                             <option value="Easy">Too Easy</option>
                             <option value="Easy">Easy</option>
                             <option value="Average">Average</option>

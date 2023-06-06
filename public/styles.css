@@ -1,16 +1,3 @@
-/* Allign weight measurement select element with weight input element */
-.form-row-weight {
-  display: flex;
-  align-items: center;
-}
-.form-row-weight label {
-  margin-right: 1rem;
-}
-
-#taskWeightMeasurement {
-  align-self: flex-end;
-}
-
 /* CSS Grid */
 .container {
   display: grid;
@@ -30,12 +17,51 @@
   grid-area: content-page;
 }
 
+/* Allign weight measurement select element with weight input element */
+.form-row-weight {
+  display: flex;
+  align-items: center;
+}
+.form-row-weight label {
+  margin-right: 1rem;
+}
+
+#taskWeightMeasurement {
+  align-self: flex-end;
+}
+
+.form-row-reps, .form-row-goal {
+  padding-top: 2rem;
+}
+
+#open-input-modal {
+  display: none; /* Hide the button unless user scrolls past certain point */
+  position: fixed;
+  bottom: 2rem;
+  left: 50%; /* Centers the button */
+  transform: translateX(-50%); /* Centers the button */
+  z-index: 9999;
+  width: 20%;
+  padding: 0.5rem;
+  background-color: var(--orangemain);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Geologica", sans-serif;
+  font-size: 24px;
+}
+
+#open-input-modal:hover {
+  background-color: #ff8d22;
+}
+
 /* Dialog/Modal element*/
 dialog {
   z-index: 10;
-  background: var(--almostblack);
+  background: var(--purplebg);
   border: none;
-  border-radius: 1rem;
+  border-radius: 2rem;
   margin: auto;
   min-width: 25%;
   min-height: 50%;
@@ -45,12 +71,13 @@ dialog {
 }
 dialog #add-label {
   color: var(--almostwhite);
-  font-size: 42px;
-  margin-left: 0;
+  font-size: 48px;
+  margin: 0;
+  font-family: "Kanit", sans-serif;
 }
 
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(5px);
 }
 
@@ -59,13 +86,19 @@ form input, form textarea {
   margin-bottom: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-family: "Geologica", sans-serif;
+  font-size: 18px;
 }
 form select {
   padding: 10px;
+  padding-top: 9px;
+  padding-bottom: 9px;
   margin-bottom: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  color: grey;
+  color: #cacaca;
+  font-family: "Geologica", sans-serif;
+  font-size: 18px;
 }
 form select:focus {
   color: #000000;
@@ -77,7 +110,7 @@ form option:not(:first-of-type) {
   color: black;
 }
 form option:first-of-type {
-  color: grey;
+  color: #cacaca;
 }
 form #submit-button {
   width: 100%;
@@ -88,6 +121,8 @@ form #submit-button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-family: "Geologica", sans-serif;
+  font-size: 18px;
 }
 form #submit-button:hover {
   background-color: #2b642e;
@@ -101,6 +136,8 @@ form #close-input-modal {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-family: "Geologica", sans-serif;
+  font-size: 18px;
 }
 form #close-input-modal:hover {
   background-color: #3b3b3b;
@@ -116,17 +153,19 @@ label span {
   transition: all 0.2s;
   transform-origin: top left;
   color: var(--almostwhite);
-  margin-left: 15px;
+  font-family: "Geologica", sans-serif;
 }
 label input[placeholder=" "]:not(:focus):placeholder-shown + span {
-  transform: translateY(1.5em) scale(1.2);
+  transform: translateX(1em) translateY(1.9em) scale(1.2);
   pointer-events: none;
   color: grey;
+  opacity: 0.5;
 }
 label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
-  transform: translateY(1.5em) scale(1.2);
+  transform: translateX(1em) translateY(1.9em) scale(1.2);
   pointer-events: none;
   color: grey;
+  opacity: 0.5;
 }
 
 /* List element */
@@ -138,12 +177,14 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
   display: inline-block;
   margin-right: 5%;
   text-align: center;
+  border-radius: 2rem;
 }
 #tasklist li figure {
-  background-color: var(--almostwhite);
+  background-color: var(--lessgrey);
   margin-top: 0;
   margin-left: 0;
   margin-right: 0;
+  border-radius: 2rem 2rem 0 0;
 }
 #tasklist li figure img {
   vertical-align: top;
@@ -154,6 +195,7 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
   font-size: 32px;
   margin-top: 0;
   margin-bottom: 0;
+  line-height: 1;
 }
 #tasklist li h2 { /* muscle group and date */
   font-size: 20px;
@@ -166,13 +208,27 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
   margin-top: 25px;
   margin-bottom: 0;
 }
+#tasklist li button { /* view more button */
+  width: 100%;
+  padding: 0.25rem;
+  margin-top: 10px;
+  background-color: var(--lessdark);
+  color: var(--almostwhite);
+  border: none;
+  border-radius: 0 0 2rem 2rem;
+  cursor: pointer;
+  font-family: "Geologica", sans-serif;
+  font-size: 18px;
+}
+#tasklist li button:hover {
+  background-color: #0c0c0c;
+}
 #tasklist li dialog {
   padding: 0;
   min-width: 50%;
-  min-height: 90%;
 }
 #tasklist li dialog figure {
-  background-color: var(--almostwhite);
+  background-color: var(--lessgrey);
   margin-top: 0;
   margin-left: 0;
   margin-right: 0;
@@ -187,36 +243,89 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
   font-size: 64px;
   margin-top: 0;
   margin-bottom: 0;
+  padding: 0;
+  line-height: 1;
 }
 #tasklist li dialog h2 { /* muscle group and date */
-  font-size: 42px;
+  font-size: 32px;
   margin-top: 0;
   margin-bottom: 0;
   font-weight: normal;
+  line-height: 1;
 }
 #tasklist li dialog h3 { /* sets reps weight */
   font-size: 32px;
   margin-top: 40px;
   margin-bottom: 0;
   font-weight: normal;
+  line-height: 1.2;
 }
 #tasklist li dialog p { /* additional info */
   font-size: 18px;
   margin-top: 40px;
   margin-bottom: 0;
+  line-height: 1;
+}
+#tasklist li dialog #delete-button {
+  width: 20%;
+  padding: 8px;
+  margin-top: 20px;
+  background-color: #640000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+  margin-left: 5%;
+  font-family: "Geologica", sans-serif;
+  font-size: 14px;
+}
+#tasklist li dialog #delete-button:hover {
+  background-color: #d41b1b;
+}
+#tasklist li dialog #close-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: var(--lessdark);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Geologica", sans-serif;
+  font-size: 18px;
+}
+#tasklist li dialog #close-button:hover {
+  background-color: #000000;
 }
 
 :root {
   --almostblack: rgb(32, 32, 32);
-  --almostwhite: rgb(206, 206, 206);
+  --lessdark: rgb(54, 54, 54);
+  --lessgrey: rgb(211, 211, 211);
+  --almostwhite: rgb(235, 235, 235);
+  --purplebg: #322260;
+  --orangemain:#cf7e14;
 }
 
-#tasklist li h1, #tasklist li h2, #tasklist li p, #tasklist li dialog h3 {
+#tasklist li h1, #tasklist li h2, #tasklist li p {
+  text-align: left;
+  margin-left: 5%;
+  color: var(--lessgrey);
+  font-family: "Kanit", sans-serif;
+}
+
+#tasklist li dialog h1, #tasklist li dialog h2, #tasklist li dialog h3, #tasklist li dialog p {
   text-align: left;
   margin-left: 5%;
   color: var(--almostwhite);
+  font-family: "Kanit", sans-serif;
+}
+
+strong {
+  font-weight: 900;
 }
 
 html, body {
-  background-color: rgb(54, 0, 105);
+  background-color: var(--purplebg);
 }
