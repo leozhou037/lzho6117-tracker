@@ -74,6 +74,124 @@
   padding-top: 2rem;
 }
 
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh 100vh;
+    padding: 0;
+  }
+  .landing-page h1 {
+    font-size: 48px;
+  }
+  .landing-page #cta {
+    padding: 0.75rem;
+    font-size: 16px;
+  }
+  #content-page h1 {
+    font-size: 24px;
+  }
+  #open-input-modal {
+    min-width: 50%;
+    font-size: 20px !important;
+  }
+  form input, form textarea {
+    padding: 5px !important;
+    font-size: 16px !important;
+  }
+  form select {
+    padding: 5px !important;
+    font-size: 16px !important;
+  }
+  #add-label {
+    font-size: 24px !important;
+  }
+  /* Padding Inside Form */
+  .form-row-reps, .form-row-goal {
+    padding-top: 1rem;
+  }
+  /* Floating label above input field */
+  label span {
+    font-size: 14px !important;
+  }
+  label input[placeholder=" "]:not(:focus):placeholder-shown + span {
+    transform: translateX(0.7em) translateY(1.6em) scale(1.2) !important;
+  }
+  label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
+    transform: translateX(0.7em) translateY(1.6em) scale(1.2) !important;
+  }
+  #submit-button {
+    padding: 0.5rem !important;
+    margin-top: 15px !important;
+    font-size: 16px !important;
+  }
+  #close-input-modal {
+    padding: 0.5rem !important;
+    margin-top: 10px !important;
+    font-size: 16px !important;
+  }
+  #tasklist {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    padding-top: 0 !important;
+    padding-bottom: 100px !important;
+  }
+  #tasklist li {
+    width: 45%;
+    min-width: 45%;
+    margin-right: 2.5% !important;
+    margin-left: 2.5% !important;
+    margin-bottom: 1rem !important;
+  }
+  #tasklist li h1 { /* excercise name */
+    font-size: 20px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  #tasklist li h2 { /* muscle group and date */
+    font-size: 14px !important;
+    margin-top: 0 !important;
+    margin-bottom: 5px !important;
+  }
+  #tasklist li button { /* view more button */
+    padding: 0.75rem !important;
+    margin-top: 10px !important;
+    font-size: 16px !important;
+  }
+  #tasklist li dialog {
+    padding: 0;
+    min-width: 90% !important;
+  }
+  #tasklist li dialog figure {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #tasklist li dialog figure img {
+    vertical-align: top;
+    height: 30vh;
+    width: 50%;
+    object-fit: contain;
+  }
+  #tasklist li dialog h1 { /* excercise name */
+    font-size: 32px !important;
+  }
+  #tasklist li dialog h2 { /* muscle group and date */
+    font-size: 20px !important;
+  }
+  #tasklist li dialog h3 { /* sets reps weight */
+    font-size: 20px !important;
+  }
+  #tasklist li dialog p { /* additional info */
+    font-size: 14px !important;
+  }
+  #tasklist li dialog #delete-button {
+    width: 10rem !important;
+    padding: 4px !important;
+    margin-top: 20px !important;
+    font-size: 14px !important;
+  }
+}
 #open-input-modal {
   display: none; /* Hide the button unless user scrolls past certain point */
   position: fixed;
@@ -89,7 +207,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-family: "Geologica", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 #open-input-modal:hover {
@@ -166,7 +284,7 @@ form #submit-button {
   font-size: 18px;
 }
 form #submit-button:hover {
-  background-color: #2b642e;
+  background-color: #ff8d22;
 }
 form #close-input-modal {
   width: 100%;
@@ -195,6 +313,7 @@ label span {
   transform-origin: top left;
   color: var(--almostwhite);
   font-family: "Geologica", sans-serif;
+  font-size: 16px;
 }
 label input[placeholder=" "]:not(:focus):placeholder-shown + span {
   transform: translateX(1em) translateY(1.9em) scale(1.2);
@@ -210,6 +329,10 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
 }
 
 /* List element */
+#tasklist {
+  padding: 40px;
+  padding-bottom: 100px;
+}
 #tasklist li {
   background: var(--almostblack);
   margin-bottom: 2rem;
@@ -271,8 +394,7 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
 }
 #tasklist li dialog figure img {
   vertical-align: top;
-  height: 30vh;
-  width: 50%;
+  height: 20vh;
   object-fit: contain;
 }
 #tasklist li dialog h1 { /* excercise name */
@@ -301,6 +423,7 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
   margin-top: 40px;
   margin-bottom: 0;
   line-height: 1;
+  overflow-wrap: break-word;
 }
 #tasklist li dialog #delete-button {
   width: 20%;

@@ -81,3 +81,159 @@
 .form-row-reps, .form-row-goal {
   padding-top: 2rem;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+  
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100vh 100vh;
+    padding: 0;
+  }
+
+  .landing-page {
+    h1 {
+        font-size: 48px;
+    }
+
+    #cta {
+      padding: 0.75rem;
+      font-size: 16px;
+    }
+  }
+
+  #content-page {
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  #open-input-modal {
+    min-width: 50%;
+    font-size: 20px !important;
+  }
+
+  form {
+    input, textarea {
+      padding: 5px !important;
+      font-size: 16px !important;
+    }
+      
+    select {
+      padding: 5px !important;
+      font-size: 16px !important;
+    }
+  }
+
+  #add-label {
+    font-size: 24px !important;
+  }
+
+  /* Padding Inside Form */
+  .form-row-reps, .form-row-goal {
+    padding-top: 1rem;
+  }
+
+  /* Floating label above input field */
+  label {
+    span {
+      font-size: 14px !important;
+    }
+
+    input[placeholder=" "]:not(:focus):placeholder-shown + span {
+      transform: translateX(0.7em) translateY(1.6em) scale(1.2) !important;
+    }
+
+    textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
+      transform: translateX(0.7em) translateY(1.6em) scale(1.2) !important;
+    }
+  }
+
+  #submit-button {
+    padding: 0.5rem !important;
+    margin-top: 15px !important;
+    font-size: 16px !important;
+  }
+
+  #close-input-modal {
+      padding: 0.5rem !important;
+      margin-top: 10px !important;
+      font-size: 16px !important;
+  }
+
+  #tasklist {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    padding-top: 0 !important;
+    padding-bottom: 100px !important;
+
+    li {
+      width: 45%;
+      min-width: 45%;
+      margin-right: 2.5% !important;
+      margin-left: 2.5% !important;
+      margin-bottom: 1rem !important;
+
+      h1 { /* excercise name */
+        font-size: 20px !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+    
+      h2 {  /* muscle group and date */
+        font-size: 14px !important;
+        margin-top: 0 !important;
+        margin-bottom: 5px !important;
+      }
+
+      button { /* view more button */
+        padding: 0.75rem !important;
+        margin-top: 10px !important;
+        font-size: 16px !important;
+      }
+
+      dialog {
+        padding: 0;
+        min-width: 90% !important;
+
+        figure {
+          margin-top: 0;
+          margin-left: 0;
+          margin-right: 0; 
+          
+          img {
+            vertical-align: top;
+            height: 30vh; 
+            width: 50%;
+            object-fit: contain;
+          }
+        }
+    
+        h1 { /* excercise name */
+          font-size: 32px !important;
+        }
+      
+        h2 { /* muscle group and date */
+          font-size: 20px !important;
+        }
+      
+        h3 { /* sets reps weight */
+          font-size: 20px !important;
+        }
+      
+        p { /* additional info */
+          font-size: 14px !important;
+        }
+    
+        #delete-button {
+          width: 10rem !important;
+          padding: 4px !important;
+          margin-top: 20px !important;
+          font-size: 14px !important;
+        }
+      }
+
+    }
+  }
+  
+}

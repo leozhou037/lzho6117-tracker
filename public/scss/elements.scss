@@ -13,7 +13,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-family: 'Geologica', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 #open-input-modal:hover {
@@ -100,7 +100,7 @@ form {
   }
 
   #submit-button:hover {
-    background-color: #2b642e;
+    background-color: #ff8d22;
   }
 
   #close-input-modal {
@@ -133,6 +133,7 @@ label {
     transform-origin: top left;
     color: var(--almostwhite);
     font-family: 'Geologica', sans-serif;
+    font-size: 16px;
   }
 
   input[placeholder=" "]:not(:focus):placeholder-shown + span {
@@ -151,151 +152,158 @@ label {
 }
 
 /* List element */
-#tasklist li {
-  background: var(--almostblack);
-  margin-bottom: 2rem;
-  width: 20%;
-  max-width: 20%;
-  display: inline-block;
-  margin-right: 5%;
-  text-align: center;
-  border-radius: 2rem;
+#tasklist {
 
-  figure {
-    background-color: var(--lessgrey);
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0; 
-    border-radius: 2rem 2rem 0 0;
+  padding: 40px;
+  padding-bottom: 100px;
 
-    img {
-      vertical-align: top;
-      width: 75%;
-      object-fit: cover;
-    }
-  }
-
-  h1 { /* excercise name */
-    @extend %lessgreyGeologica;
-    font-size: 32px;
-    margin-top: 0;
-    margin-bottom: 0; 
-    line-height: 1;
-  }
-
-  h2 {  /* muscle group and date */
-    @extend %lessgreyGeologica;
-    font-size: 20px;
-    margin-top: 0;
-    margin-bottom: 15px; 
-    font-weight: normal;
-  }
-
-  button { /* view more button */
-    width: 100%;
-    padding: 0.25rem;
-    margin-top: 10px;
-    background-color: var(--lessdark);
-    color: var(--almostwhite);
-    border: none;
-    border-radius: 0 0 2rem 2rem;
-    cursor: pointer;
-    font-family: 'Geologica', sans-serif;
-    font-size: 18px;
-  }
-
-  button:hover {
-    background-color: #0c0c0c;
-  }
-
-  dialog {
-    padding: 0;
-    min-width: 50%;
-
+  li {
+    background: var(--almostblack);
+    margin-bottom: 2rem;
+    width: 20%;
+    max-width: 20%;
+    display: inline-block;
+    margin-right: 5%;
+    text-align: center;
+    border-radius: 2rem;
+  
     figure {
       background-color: var(--lessgrey);
       margin-top: 0;
       margin-left: 0;
       margin-right: 0; 
-      
+      border-radius: 2rem 2rem 0 0;
+  
       img {
         vertical-align: top;
-        height: 30vh; 
-        width: 50%;
-        object-fit: contain;
+        width: 75%;
+        object-fit: cover;
       }
     }
-
+  
     h1 { /* excercise name */
-      @extend %almostwhiteGeologica;
-      font-size: 64px;
-      margin-top: 0;
-      margin-bottom: 0; 
-      padding: 0;
-      line-height: 1;
-    }
-  
-    h2 { /* muscle group and date */
-      @extend %almostwhiteGeologica;
+      @extend %lessgreyGeologica;
       font-size: 32px;
       margin-top: 0;
       margin-bottom: 0; 
-      font-weight: normal;
       line-height: 1;
     }
   
-    h3 { /* sets reps weight */
-      @extend %almostwhiteKanit;
-      font-size: 32px;
-      margin-top: 40px;
-      margin-bottom: 0; 
+    h2 {  /* muscle group and date */
+      @extend %lessgreyGeologica;
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 15px; 
       font-weight: normal;
-      line-height: 1.2;
     }
   
-    p { /* additional info */
-      @extend %almostwhiteKanit;
-      font-size: 18px;
-      margin-top: 40px;
-      margin-bottom: 0; 
-      line-height: 1;
-    }
-
-    #delete-button {
-      width: 20%;
-      padding: 8px;
-      margin-top: 20px;
-      background-color: #640000;
-      color: #fff;
+    button { /* view more button */
+      width: 100%;
+      padding: 0.25rem;
+      margin-top: 10px;
+      background-color: var(--lessdark);
+      color: var(--almostwhite);
       border: none;
-      border-radius: 4px;
+      border-radius: 0 0 2rem 2rem;
       cursor: pointer;
-      float: left;
-      margin-left: 5%;
       font-family: 'Geologica', sans-serif;
-      font-size: 14px;
+      font-size: 18px;
     }
   
-    #delete-button:hover {
-      background-color: #d41b1b;
+    button:hover {
+      background-color: #0c0c0c;
     }
   
-    #close-button {
-        width: 100%;
-        padding: 10px;
-        margin-top: 10px;
-        background-color: var(--lessdark);
+    dialog {
+      padding: 0;
+      min-width: 50%;
+  
+      figure {
+        background-color: var(--lessgrey);
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0; 
+        
+        img {
+          vertical-align: top;
+          height: 20vh; 
+          object-fit: contain;
+        }
+      }
+  
+      h1 { /* excercise name */
+        @extend %almostwhiteGeologica;
+        font-size: 64px;
+        margin-top: 0;
+        margin-bottom: 0; 
+        padding: 0;
+        line-height: 1;
+      }
+    
+      h2 { /* muscle group and date */
+        @extend %almostwhiteGeologica;
+        font-size: 32px;
+        margin-top: 0;
+        margin-bottom: 0; 
+        font-weight: normal;
+        line-height: 1;
+      }
+    
+      h3 { /* sets reps weight */
+        @extend %almostwhiteKanit;
+        font-size: 32px;
+        margin-top: 40px;
+        margin-bottom: 0; 
+        font-weight: normal;
+        line-height: 1.2;
+      }
+    
+      p { /* additional info */
+        @extend %almostwhiteKanit;
+        font-size: 18px;
+        margin-top: 40px;
+        margin-bottom: 0; 
+        line-height: 1;
+        overflow-wrap: break-word;
+      }
+  
+      #delete-button {
+        width: 20%;
+        padding: 8px;
+        margin-top: 20px;
+        background-color: #640000;
         color: #fff;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        float: left;
+        margin-left: 5%;
         font-family: 'Geologica', sans-serif;
-        font-size: 18px;
-    }
+        font-size: 14px;
+      }
+    
+      #delete-button:hover {
+        background-color: #d41b1b;
+      }
+    
+      #close-button {
+          width: 100%;
+          padding: 10px;
+          margin-top: 10px;
+          background-color: var(--lessdark);
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-family: 'Geologica', sans-serif;
+          font-size: 18px;
+      }
+    
+      #close-button:hover {
+        background-color: #000000;
+      }
   
-    #close-button:hover {
-      background-color: #000000;
     }
-
   }
 }
+
