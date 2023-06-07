@@ -39,7 +39,7 @@ The web app should responsive for most mobile and desktop devices. During develo
     - All assosciated data for each list item (each list item created will also create a modal)
 - Added floating labels over form input fields
 - Added images that correspond to each muscle group
-![Image of modal element containing input form](/documentation/iteration3-2.png)
+#######![Image of modal element containing input form](/documentation/iteration3-2.png)
 ![Image of modal element containing all assosciated data for each list item](/documentation/iteration3-3.png)
 ![Image of images that correspond to muscle group chosen](/documentation/iteration3-1.png)
 
