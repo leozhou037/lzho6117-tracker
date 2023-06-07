@@ -43,12 +43,25 @@ The web app should responsive for most mobile and desktop devices. During develo
 ![Image of modal element containing input form](/documentation/iteration3-2.png)
 ![Image of modal element containing all assosciated data for each list item](/documentation/iteration3-3.png)
 
-
 #### Current Iteration
 - Created landing page
 - Moved everything to be below the landing page
 - CSS styling was applied after website functionality was developed
 - Webpage was made responsive for mobile and desktop devices after all elements were styled
+
+#### Future Iterations
+Jym Journey can be improved in the future through the implementation of additional features such as:
+- Filtering data (sorting by date/session, exercise, etc.)
+- Display an image for each exercise rather than the muscle group
+- Data visualisation
+- Ability to login/create an account
+- Ability to edit existing items
+
+#### Known Bugs/Issues
+- When the input form popup (modal)  is open, sometimes dragging the text to highlight it causes the popup to close if the mouse is released outside the popup window, since there is the functionality to close the popup by clicking outside the box.
+- After the user selects an option for the dropdown (select) menu, the placeholder text will be grey if the element is not selected, i.e. user chooses ‘Easy’ but the text appears grey in the dropdown even after choosing. - If this text were instead set to black, the placeholder text would appear black before the user chooses an option i.e. ‘Select Difficulty’ would appear black.
+If the note content is too long, the close button of the popup/modal may be hidden unless the user scrolls down
+
 
 ## References
 
