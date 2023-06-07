@@ -59,8 +59,8 @@ Jym Journey can be improved in the future through the implementation of addition
 
 #### Known Bugs/Issues
 - When the input form popup (modal)  is open, sometimes dragging the text to highlight it causes the popup to close if the mouse is released outside the popup window, since there is the functionality to close the popup by clicking outside the box.
-- After the user selects an option for the dropdown (select) menu, the placeholder text will be grey if the element is not selected, i.e. user chooses ‘Easy’ but the text appears grey in the dropdown even after choosing. - If this text were instead set to black, the placeholder text would appear black before the user chooses an option i.e. ‘Select Difficulty’ would appear black.
-If the note content is too long, the close button of the popup/modal may be hidden unless the user scrolls down
+- After the user selects an option for the dropdown (select) menu, the placeholder text will be grey if the element is not selected, i.e. user chooses ‘Easy’ but the text appears grey in the dropdown even after choosing. If this text were instead set to black, the placeholder text would appear black before the user chooses an option i.e. ‘Select Difficulty’ would appear black.
+- If the note content is too long, the close button of the popup/modal may be hidden unless the user scrolls down
 
 
 ## References
