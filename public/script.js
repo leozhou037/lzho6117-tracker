@@ -1,6 +1,7 @@
 ////////////////////////
 // Display time and date
 ////////////////////////
+
 const date = new Date();
 
 // Get time and date values
@@ -15,6 +16,7 @@ let currentDate = `${time} - ${day}/${month}/${year}`;
 /////////////////////////////////
 // Array to store user input data
 /////////////////////////////////
+
 // var taskList = [];
 
 // Function to add task to the list
@@ -54,9 +56,11 @@ function addTask(name, type, reps, sets, weight, weightMeasurement, goal, diffic
     // taskList.push(task);
     displayTasks();
 }
+
 //////////////////////////////
 // Add input values into array
 //////////////////////////////
+
 // Variable for DOM selection of HTML elements
 const form = document.querySelector('#taskform');
 
@@ -79,7 +83,6 @@ form.addEventListener('submit', function(event) {
     
     // Close the modal when submit button is pressed
     inputModal.close();
-
     }
 )
 
@@ -99,6 +102,7 @@ const muscleGroupLogo = {
 ///////////////////////////////////////
 // Display data from array in task list
 ///////////////////////////////////////
+
 // Variable for DOM selection of HTML elements
 const tasklistElem = document.querySelector('#tasklist');
 
@@ -138,6 +142,7 @@ function displayTasks() {
             /////////////////////////////////////////////////////////////////////////////
             // Create dialog element for each list item containing full list of task data
             /////////////////////////////////////////////////////////////////////////////
+
             let moreModal = document.createElement('dialog');
             moreModal.innerHTML = `
             <figure>
@@ -180,7 +185,8 @@ function displayTasks() {
 
             //////////////////////////////////////////////////////////////////////////////////////////////
             // Create 'view more' button for each list item that is created, to open the 'view more' modal
-            //////////////////////////////////////////////////////////////////////////////////////////////         
+            //////////////////////////////////////////////////////////////////////////////////////////////  
+
             let moreButton = document.createElement('button');
             let moreButtonText = document.createTextNode('VIEW MORE');
             moreButton.appendChild(moreButtonText);
@@ -195,6 +201,7 @@ function displayTasks() {
             //////////////////////////////////////////////////////////
             // Create delete button for each list item that is created
             //////////////////////////////////////////////////////////
+
             let delButton = document.createElement('button');
             delButton.id = 'delete-button';
             let delButtonText = document.createTextNode('DELETE EXERCISE');
@@ -220,6 +227,7 @@ function displayTasks() {
             ///////////////////////////////////////////////////
             // Create a close button inside the view more modal
             ///////////////////////////////////////////////////
+
             let closeMoreModal = document.createElement('button');
             closeMoreModal.id = 'close-button';
             let closeMoreModalText = document.createTextNode('CLOSE');
@@ -260,6 +268,7 @@ displayTasks();
 ///////////////////
 // Input Form Modal
 ///////////////////
+
 // Variable for DOM selection of HTML elements
 const inputModal = document.querySelector("#input-modal");
 
@@ -299,7 +308,7 @@ inputModal.addEventListener("click", e => {
     }
   })
 
-// Only show add exercise button once the user scrolls past the landing page
+// Only show 'add exercise'/'open input modal' button once the user scrolls past the landing page
 // Reference: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 window.onscroll = function() { scrollFunction() };
 

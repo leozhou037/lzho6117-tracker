@@ -1,6 +1,7 @@
 @import 'layout';
 @import 'elements';
 
+/* set colour variables */
 :root {
   --almostblack: rgb(32, 32, 32);
   --lessdark: rgb(54, 54, 54);
@@ -10,6 +11,7 @@
   --orangemain:#cf7e14;
 }
 
+/*text variables */
 %lessgreyKanit {
   text-align: left;
   margin-left: 5%;
@@ -38,6 +40,7 @@
   font-family: 'Geologica', sans-serif;
 }
 
+/* make bold text more bold */
 strong {
   font-weight: 900;
 }

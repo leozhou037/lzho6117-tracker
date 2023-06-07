@@ -23,14 +23,14 @@
   align-items: center;
   margin: 0;
 }
-.landing-page h1 {
+.landing-page h1 { /* Jym Journey text*/
   font-family: "Geologica", sans-serif;
   font-size: 100px;
   font-weight: bolder;
   text-align: center;
   color: var(--almostwhite);
 }
-.landing-page #cta {
+.landing-page #cta { /* CTA button to scroll down */
   display: block;
   margin: 0 auto;
   padding: 1rem;
@@ -46,32 +46,17 @@
   background-color: #ff8d22;
 }
 
+/* after scrolling past landing page */
 #content-page {
   grid-area: content-page;
   padding-top: 40px;
 }
-#content-page h1 {
-  margin-left: 40px;
+#content-page h1 { /* 'Exercises completed:' text*/
+  margin-left: 5%;
+  padding-left: 0.1rem;
+  margin-bottom: 0;
   color: var(--almostwhite);
   font-family: "Geologica", sans-serif;
-}
-
-/* Allign weight measurement select element with weight input element */
-.form-row-weight {
-  display: flex;
-  align-items: center;
-}
-.form-row-weight label {
-  margin-right: 1rem;
-}
-
-#taskWeightMeasurement {
-  align-self: flex-end;
-}
-
-/* Padding Inside Form */
-.form-row-reps, .form-row-goal {
-  padding-top: 2rem;
 }
 
 /* Media Queries */
@@ -106,11 +91,10 @@
   #add-label {
     font-size: 24px !important;
   }
-  /* Padding Inside Form */
-  .form-row-reps, .form-row-goal {
+  .form-row-reps, .form-row-goal { /* Padding Inside Form */
     padding-top: 1rem;
   }
-  /* Floating label above input field */
+  label { /* Floating label above input field */ }
   label span {
     font-size: 14px !important;
   }
@@ -192,6 +176,7 @@
     font-size: 14px !important;
   }
 }
+/* Add Exercise button */
 #open-input-modal {
   display: none; /* Hide the button unless user scrolls past certain point */
   position: fixed;
@@ -227,7 +212,7 @@ dialog {
   box-sizing: border-box;
   overflow-x: hidden;
 }
-dialog #add-label {
+dialog #add-label { /* Add Your Exercise heading on input modal */
   color: var(--almostwhite);
   font-size: 36px;
   margin: 0;
@@ -239,6 +224,7 @@ dialog::backdrop {
   backdrop-filter: blur(5px);
 }
 
+/* input form */
 form input, form textarea {
   padding: 10px;
   margin-bottom: 5px;
@@ -328,10 +314,29 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
   opacity: 0.5;
 }
 
+/* Allign weight measurement select element with weight input element */
+.form-row-weight {
+  display: flex;
+  align-items: center;
+}
+.form-row-weight label {
+  margin-right: 1rem;
+}
+
+#taskWeightMeasurement {
+  align-self: flex-end;
+}
+
+/* Padding Inside Form */
+.form-row-reps, .form-row-goal {
+  padding-top: 2rem;
+}
+
 /* List element */
 #tasklist {
   padding: 40px;
   padding-bottom: 100px;
+  padding-top: 10px;
 }
 #tasklist li {
   background: var(--almostblack);
@@ -339,7 +344,8 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
   width: 20%;
   max-width: 20%;
   display: inline-block;
-  margin-right: 5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
   text-align: center;
   border-radius: 2rem;
 }
@@ -382,7 +388,7 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
 #tasklist li button:hover {
   background-color: #0c0c0c;
 }
-#tasklist li dialog {
+#tasklist li dialog { /* view more pop-up/modal */
   padding: 0;
   min-width: 50%;
 }
@@ -458,6 +464,7 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
   background-color: #000000;
 }
 
+/* set colour variables */
 :root {
   --almostblack: rgb(32, 32, 32);
   --lessdark: rgb(54, 54, 54);
@@ -467,6 +474,7 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
   --orangemain:#cf7e14;
 }
 
+/*text variables */
 #tasklist li dialog h3, #tasklist li dialog p {
   text-align: left;
   margin-left: 5%;
@@ -488,6 +496,7 @@ label textarea[placeholder=" "]:not(:focus):placeholder-shown + span {
   font-family: "Geologica", sans-serif;
 }
 
+/* make bold text more bold */
 strong {
   font-weight: 900;
 }

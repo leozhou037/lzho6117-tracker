@@ -1,5 +1,5 @@
-/* CSS Grid */
-.container {  
+ /* CSS Grid */
+.container { 
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100vh 100vh;
@@ -26,7 +26,8 @@
   align-items: center;
   margin: 0;
 
-  h1 {
+
+  h1 {   /* Jym Journey text*/
     font-family: 'Geologica', sans-serif;
     font-size: 100px;
     font-weight: bolder;
@@ -34,7 +35,8 @@
     color: var(--almostwhite);
   }
 
-  #cta {
+
+  #cta { /* CTA button to scroll down */
     display: block;
     margin: 0 auto;
     padding: 1rem;
@@ -52,34 +54,19 @@
   }
 }
 
-#content-page { 
+ /* after scrolling past landing page */
+#content-page {
   grid-area: content-page; 
   padding-top: 40px;
 
-  h1 {
-    margin-left: 40px;
+
+  h1 {  /* 'Exercises completed:' text*/
+    margin-left: 5%;
+    padding-left: 0.1rem;
+    margin-bottom: 0;
     color: var(--almostwhite);
     font-family: 'Geologica', sans-serif;
   }
-}
-
-/* Allign weight measurement select element with weight input element */
-.form-row-weight {
-  display: flex;
-  align-items: center;
-
-  label {
-    margin-right: 1rem;
-  }
-}
-
-#taskWeightMeasurement {
-  align-self: flex-end;
-}
-
-/* Padding Inside Form */
-.form-row-reps, .form-row-goal {
-  padding-top: 2rem;
 }
 
 /* Media Queries */
@@ -129,13 +116,13 @@
     font-size: 24px !important;
   }
 
-  /* Padding Inside Form */
-  .form-row-reps, .form-row-goal {
+
+  .form-row-reps, .form-row-goal {  /* Padding Inside Form */
     padding-top: 1rem;
   }
 
-  /* Floating label above input field */
-  label {
+
+  label {  /* Floating label above input field */
     span {
       font-size: 14px !important;
     }
